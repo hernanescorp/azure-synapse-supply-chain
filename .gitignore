@@ -1,0 +1,41 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+
+# IDEs
+.vscode/
+.idea/
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Credentials and certificates
+*.pem
+*.key
+*.pfx
+*.crt
+
+# Local datasets
+data/
+*.csv
+*.parquet
+
+# Power BI local artifacts
+**/.pbi/
+
+# Logs
+*.log
