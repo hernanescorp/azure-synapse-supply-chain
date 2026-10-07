@@ -1,0 +1,59 @@
+services:
+
+  postgres:
+    image: postgres:17
+    container_name: synapse-lab-postgres
+
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    networks:
+      - synapse_lab_network
+
+    restart: unless-stopped
+
+    mem_limit: 512m
+    cpus: 0.50
+
+
+  simulator:
+    image: python:3.13-slim
+
+    working_dir: /app
+
+    volumes:
+      - ./simulator:/app
+
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
+    networks:
+      - synapse_lab_network
+
+    depends_on:
+      - postgres
+
+    command: >
+      sh -c "pip install --no-cache-dir -r requirements.txt &&
+             python simulate_erp.py"
+
+    profiles:
+      - simulator
+
+
+volumes:
+  postgres_data:
+
+
+networks:
+  synapse_lab_network:
+    driver: bridge
