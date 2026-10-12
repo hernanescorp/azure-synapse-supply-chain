@@ -1,0 +1,16 @@
+{
+	"name": "ds_postgresql_orders",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_postgresql_hetzner",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "PostgreSqlV2Table",
+		"schema": [],
+		"typeProperties": {
+			"schema": "public",
+			"table": "orders"
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"name": "ds_bronze_postgresql_orders",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "syn-supply-chain-lab-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "orders.parquet",
+				"folderPath": "bronze/postgresql/orders",
+				"fileSystem": "synapse"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
