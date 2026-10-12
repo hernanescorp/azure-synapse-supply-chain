@@ -1,0 +1,13 @@
+[Unit]
+Description=Private PostgreSQL proxy for Azure Synapse SHIR
+Wants=network-online.target tailscaled.service docker.service
+After=network-online.target tailscaled.service docker.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/socat TCP-LISTEN:5432,bind=100.104.217.36,reuseaddr,fork,range=100.96.141.46/32 TCP:172.19.0.2:5432
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
