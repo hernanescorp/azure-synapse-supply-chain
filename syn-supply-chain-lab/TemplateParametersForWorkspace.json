@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "syn-supply-chain-lab"
+		},
+		"ls_postgresql_hetzner_password": {
+			"value": ""
+		},
+		"syn-supply-chain-lab-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:syn-supply-chain-lab.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"ls_postgresql_hetzner_properties_typeProperties_server": {
+			"value": "100.104.217.36"
+		},
+		"ls_postgresql_hetzner_properties_typeProperties_database": {
+			"value": "supply_chain"
+		},
+		"ls_postgresql_hetzner_properties_typeProperties_username": {
+			"value": "synapse_lab"
+		},
+		"syn-supply-chain-lab-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://graxianodatalake.dfs.core.windows.net"
+		}
+	}
+}
