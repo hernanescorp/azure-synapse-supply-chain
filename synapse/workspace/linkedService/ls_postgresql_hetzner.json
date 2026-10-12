@@ -1,0 +1,22 @@
+{
+	"name": "ls_postgresql_hetzner",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"description": "PostgreSQL en Hetzner mediante SHIR y Tailscale",
+		"annotations": [],
+		"type": "PostgreSqlV2",
+		"typeProperties": {
+			"server": "100.104.217.36",
+			"port": 5432,
+			"database": "supply_chain",
+			"username": "synapse_lab",
+			"sslMode": 2,
+			"authenticationType": "Basic",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI0YTBkMzIyMC0wOWUyLTQ0NmQtYmEwOC00ZTQ3OWNhNjAyZGEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "shir-hetzner-postgres",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

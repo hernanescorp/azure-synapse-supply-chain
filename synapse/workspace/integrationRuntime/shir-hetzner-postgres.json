@@ -1,0 +1,6 @@
+{
+	"name": "shir-hetzner-postgres",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
