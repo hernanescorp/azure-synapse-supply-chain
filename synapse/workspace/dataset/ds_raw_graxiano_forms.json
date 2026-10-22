@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "forms.parquet",
-				"folderPath": "graxiano/forms",
+				"folderPath": "@concat('graxiano/forms/', formatDateTime(utcNow(), 'yyyy/MM/dd'))",
 				"fileSystem": "raw"
 			},
 			"compressionCodec": "snappy"
