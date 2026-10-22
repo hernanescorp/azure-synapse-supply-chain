@@ -1,0 +1,21 @@
+{
+	"name": "ds_raw_graxiano_forms",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "syn-supply-chain-lab-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "forms.parquet",
+				"folderPath": "graxiano/forms",
+				"fileSystem": "raw"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
