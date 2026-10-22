@@ -2,7 +2,7 @@
 	"name": "sql_validate_bronze_orders",
 	"properties": {
 		"content": {
-			"query": "-- This is auto-generated code\nSELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://graxianodatalake.dfs.core.windows.net/synapse/bronze/postgresql/orders/orders.parquet',\n        FORMAT = 'PARQUET'\n    ) AS [result]\n",
+			"query": "-- This is auto-generated code\nSELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://graxianodatalake.blob.core.windows.net/raw/graxiano/forms/2026/10/22/forms.parquet',\n        FORMAT = 'PARQUET'\n    ) AS [result]\n",
 			"metadata": {
 				"language": "sql"
 			},
